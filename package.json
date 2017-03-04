@@ -11,7 +11,11 @@
     "MD5": "^1.2.1",
     "xml2js": "^0.4.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.0",
+    "should-http": "^0.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
