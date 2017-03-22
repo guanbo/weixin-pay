@@ -1,0 +1,4 @@
+--require should
+--require should-http
+--ui bdd
+--timeout 10000
