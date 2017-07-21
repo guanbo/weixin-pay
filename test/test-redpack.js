@@ -4,10 +4,11 @@ var wxpay = require('./fixtures/wxpay')
 
 describe.only('RedPack', () => {
   
-  describe('common', () => {
+  var now = Date.now();
+  describe('# common', () => {
     
     var redpack = {
-      mch_billno: Date.now(),
+      mch_billno: now,
       // sub_mch_id: '1447462802',
       send_name: "泛卡汇",
       re_openid: 'omnmWs0rRFYyCleWtldWtrkokYnk',
@@ -29,4 +30,16 @@ describe.only('RedPack', () => {
       })
     });
   });
+  
+  describe('# info', function(){
+    it('should get ok', function(done){
+      wxpay.getHBInfo({mch_billno: now}, function (err, res) {
+        res.should.have.property('result_code', 'SUCCESS')
+        res.should.have.property('return_code', 'SUCCESS')
+        res.should.have.property('err_code', 'SUCCESS')
+        res.should.have.property('status')
+        done();
+      })
+    })
+  })
 });
