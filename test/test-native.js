@@ -29,7 +29,7 @@ describe('Native', function(){
 
   describe('# QRPay', function(){
 
-    describe.only('## CASE 301', function(){
+    describe('## CASE 301', function(){
       this.timeout(30000)
       var order = mockupOrder(301)
 
